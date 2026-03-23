@@ -1,5 +1,3 @@
-"use client";
-
 import { FaFacebook, FaInstagram, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";

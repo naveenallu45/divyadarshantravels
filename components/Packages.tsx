@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { FaWhatsapp, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { createWhatsAppLink, createCallLink } from "../lib/utils";
 import Image from "next/image";
@@ -91,41 +88,24 @@ export default function Packages() {
     <section id="packages" className="py-16 md:py-24 bg-neutral-900 border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
-          >
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Special <span className="text-teal-400">Packages</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-neutral-400 text-lg"
-          >
+          </h2>
+          <p className="text-neutral-400 text-lg">
             Curated journeys for tourism and devotion with dedicated chauffeurs.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {packages.map((pkg, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (idx % 3) * 0.1 }}
-              className="bg-neutral-950 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col"
-            >
+            <div key={idx} className="bg-neutral-950 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
                   src={pkg.image}
                   alt={pkg.title}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  loading="eager"
                   className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent"></div>
@@ -160,7 +140,7 @@ export default function Packages() {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

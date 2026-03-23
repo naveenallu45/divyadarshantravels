@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaUserFriends, FaSuitcase, FaSnowflake, FaCarSide, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { createWhatsAppLink, createCallLink } from "../lib/utils";
@@ -18,43 +15,23 @@ export default function Cars() {
     <section id="fleet" className="py-16 md:py-24 bg-neutral-950 border-t border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center justify-center p-3 mb-4 rounded-full bg-neutral-900 shadow-xl border border-neutral-800"
-          >
+          <div className="inline-flex items-center justify-center p-3 mb-4 rounded-full bg-neutral-900 shadow-xl border border-neutral-800">
             <FaCarSide size={24} className="text-teal-400" />
             <span className="ml-3 font-semibold text-neutral-300 pr-2">Available cars</span>
-          </motion.div>
+          </div>
           
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
-          >
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Drive In <span className="text-teal-400">Comfort</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-neutral-400 text-lg max-w-2xl mx-auto"
-          >
+          </h2>
+          <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
             Well-maintained and sanitized vehicles for every type of journey. Always operated by professional drivers.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cars.map((car, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
               className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:shadow-[0_0_30px_rgba(20,184,166,0.1)] transition-all hover:bg-neutral-800/80 group"
             >
               <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden shadow-inner bg-neutral-950">
@@ -63,6 +40,7 @@ export default function Cars() {
                   alt={car.name}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  loading="eager"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -105,7 +83,7 @@ export default function Cars() {
                   <FaPhoneAlt size={14} /> Call Now
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

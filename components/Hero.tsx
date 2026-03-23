@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaWhatsapp, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { createWhatsAppLink, createCallLink } from "../lib/utils";
@@ -22,20 +19,10 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-3xl text-center md:text-left"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-800/80 border border-neutral-700 backdrop-blur-sm text-teal-400 font-medium text-sm mb-6 shadow-xl"
-          >
+        <div className="max-w-3xl text-center md:text-left">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-800/80 border border-neutral-700 backdrop-blur-sm text-teal-400 font-medium text-sm mb-6 shadow-xl">
             <FaMapMarkerAlt /> Kakinada & Rajahmundry
-          </motion.div>
+          </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-4 sm:mb-6">
             Shareef Car <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Travels</span>
           </h1>
@@ -44,34 +31,25 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-row items-center gap-2 sm:gap-4 justify-center md:justify-start w-full">
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <a
               href={createWhatsAppLink("Hello! I want to book a cab right now.")}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-3 sm:px-8 sm:py-4 bg-green-500 hover:bg-green-600 text-white rounded-xl sm:rounded-full flex justify-center items-center gap-2 sm:gap-3 font-semibold text-sm sm:text-lg transition-colors flex-1 sm:flex-none shadow-[0_0_20px_rgba(34,197,94,0.3)] shadow-green-500/20"
             >
               <FaWhatsapp className="text-lg sm:text-2xl" /> <span className="hidden sm:inline">Book via</span> WhatsApp
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            </a>
+            <a
               href={createCallLink()}
               className="px-4 py-3 sm:px-8 sm:py-4 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white rounded-xl sm:rounded-full flex justify-center items-center gap-2 sm:gap-3 font-semibold text-sm sm:text-lg transition-all flex-1 sm:flex-none"
             >
               <FaPhoneAlt className="text-base sm:text-xl" /> Call <span className="hidden sm:inline">9849576914</span>
-            </motion.a>
+            </a>
           </div>
-        </motion.div>
+        </div>
 
         {/* Floating Quick Info Cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-10 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
-        >
+        <div className="mt-10 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {quickStats.map((stat, i) => (
             <div key={i} className="bg-neutral-900/50 backdrop-blur-md border border-neutral-800 p-4 sm:p-6 rounded-2xl flex flex-col items-center justify-center text-center group hover:bg-neutral-800/80 transition-colors">
               <div className="text-teal-400 mb-2 sm:mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
@@ -79,7 +57,7 @@ export default function Hero() {
               <p className="text-neutral-400 text-sm mt-1">{stat.desc}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
