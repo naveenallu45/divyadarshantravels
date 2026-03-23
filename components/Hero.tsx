@@ -14,6 +14,7 @@ export default function Hero() {
           src="/images/luxury_car_araku_1774250758447.png" // The dark luxury SUV driving scene
           alt="Luxury Car Travels in Kakinada"
           fill
+          sizes="100vw"
           priority
           className="object-cover opacity-60"
         />

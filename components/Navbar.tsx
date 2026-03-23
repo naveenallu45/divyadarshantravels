@@ -45,6 +45,7 @@ export default function Navbar() {
                 src="https://res.cloudinary.com/dpepzphqf/image/upload/v1774249988/WhatsApp_Image_2026-03-23_at_11.05.32_AM_wtucc5.jpg"
                 alt="Shareef Travels Logo"
                 fill
+                sizes="(min-width: 768px) 48px, 64px"
                 className="object-cover"
               />
             </div>

@@ -1,11 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Silence turbopack inference warning
-  // @ts-ignore
-  turbopack: {
-    root: "/Users/naveenallu/shareeftravels",
-  },
+  // NOTE: Don't hardcode Turbopack root paths. It must stay inside this project
+  // or Turbopack can panic with "Invalid distDirRoot".
   images: {
     remotePatterns: [
       {

@@ -18,6 +18,7 @@ export default function Footer() {
                   src="https://res.cloudinary.com/dpepzphqf/image/upload/v1774249988/WhatsApp_Image_2026-03-23_at_11.05.32_AM_wtucc5.jpg"
                   alt="Shareef Travels Logo"
                   fill
+                  sizes="(min-width: 768px) 64px, 80px"
                   className="object-cover"
                 />
               </div>
@@ -121,6 +122,26 @@ export default function Footer() {
           </p>
           <p className="text-neutral-600 text-sm">
             Cab Services in Kakinada & Rajahmundry
+          </p>
+          <p className="text-neutral-500 text-sm flex items-center gap-2">
+            <span>Made with ❤️ by</span>
+            <a
+              href="https://staffarc.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-neutral-300 hover:text-white transition-colors"
+            >
+              <span className="relative h-5 w-5 overflow-hidden ">
+                <Image
+                  src="/images/Staffarc-logo.png"
+                  alt="StaffArc"
+                  fill
+                  className="object-cover"
+                  sizes="20px"
+                />
+              </span>
+              <span className="font-semibold">StaffArc</span>
+            </a>
           </p>
         </div>
       </div>
