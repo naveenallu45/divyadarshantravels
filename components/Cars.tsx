@@ -40,7 +40,9 @@ export default function Cars() {
                   alt={car.name}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  loading="eager"
+                  priority={idx < 2}
+                  loading={idx < 2 ? "eager" : "lazy"}
+                  unoptimized
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>

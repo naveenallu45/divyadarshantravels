@@ -105,7 +105,9 @@ export default function Packages() {
                   alt={pkg.title}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  loading="eager"
+                  priority={idx < 3}
+                  loading={idx < 3 ? "eager" : "lazy"}
+                  unoptimized
                   className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent"></div>
