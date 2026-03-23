@@ -3,11 +3,11 @@ import { FaUserFriends, FaSuitcase, FaSnowflake, FaCarSide, FaWhatsapp, FaPhoneA
 import { createWhatsAppLink, createCallLink } from "../lib/utils";
 
 const cars = [
-  { name: "Toyota Innova Crysta", type: "SUV / MUV", seats: "6-7 Seats", luggage: "3 Bags", image: "/images/innova_crysta_1774251695398.png" },
-  { name: "Maruti Suzuki Ertiga", type: "MUV", seats: "6 Seats", luggage: "2 Bags", image: "/images/ertiga_car_1774251824081.png" },
-  { name: "Swift Dzire", type: "Sedan", seats: "4 Seats", luggage: "2 Bags", image: "/images/swift_dzire_1774251923889.png" },
-  { name: "Honda Amaze", type: "Sedan", seats: "4 Seats", luggage: "2 Bags", image: "/images/honda_amaze_1774252003856.png" },
-  { name: "Toyota Etios", type: "Sedan", seats: "4 Seats", luggage: "2 Bags", image: "/images/toyota_etios.jpg" }
+  { name: "Toyota Innova Crysta", type: "SUV / MUV", seats: "6-7 Seats", luggage: "3 Bags", image: "/images/innova_crysta_1774251695398.webp" },
+  { name: "Maruti Suzuki Ertiga", type: "MUV", seats: "6 Seats", luggage: "2 Bags", image: "/images/ertiga_car_1774251824081.webp" },
+  { name: "Swift Dzire", type: "Sedan", seats: "4 Seats", luggage: "2 Bags", image: "/images/swift_dzire_1774251923889.webp" },
+  { name: "Honda Amaze", type: "Sedan", seats: "4 Seats", luggage: "2 Bags", image: "/images/honda_amaze_1774252003856.webp" },
+  { name: "Toyota Etios", type: "Sedan", seats: "4 Seats", luggage: "2 Bags", image: "/images/toyota_etios.webp" }
 ];
 
 export default function Cars() {

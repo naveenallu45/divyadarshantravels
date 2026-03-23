@@ -6,79 +6,79 @@ const packages = [
   {
     title: "Mothugudem",
     category: "Tourist Destination",
-    image: "/images/mothugudem_nature_1774262760155.png",
+    image: "/images/mothugudem_nature_1774262760155.webp",
     route: "Kakinada to Mothugudem"
   },
   {
     title: "Lambasingi / Vanajangi",
     category: "Tourist Destination",
-    image: "/images/lambasingi_hills_1774262772881.png",
+    image: "/images/lambasingi_hills_1774262772881.webp",
     route: "Kakinada to Lambasingi / Vanajangi"
   },
   {
     title: "Araku / Vizag",
     category: "Tourist Destination",
-    image: "/images/araku_valley_1774262790908.png",
+    image: "/images/araku_valley_1774262790908.webp",
     route: "Kakinada to Araku / Vizag"
   },
   {
     title: "Maredumilli",
     category: "Tourist Destination",
-    image: "/images/maredumilli_forest_1774262808573.png",
+    image: "/images/maredumilli_forest_1774262808573.webp",
     route: "Kakinada to Maredumilli"
   },
   {
     title: "Thirupathi",
     category: "Temple Destination",
-    image: "/images/thirupathi_temple_1774262821887.png",
+    image: "/images/thirupathi_temple_1774262821887.webp",
     route: "Kakinada to Thirupathi"
   },
   {
     title: "Srisailam",
     category: "Temple Destination",
-    image: "/images/srisailam_temple_1774262839969.png",
+    image: "/images/srisailam_temple_1774262839969.webp",
     route: "Kakinada to Srisailam"
   },
   {
     title: "Vijayawada",
     category: "Temple Destination",
-    image: "/images/vijayawada_temple_1774262858127.png",
+    image: "/images/vijayawada_temple_1774262858127.webp",
     route: "Kakinada to Vijayawada"
   },
   {
     title: "Annavaram",
     category: "Temple Destination",
-    image: "/images/annavaram_temple_1774262874261.png",
+    image: "/images/annavaram_temple_1774262874261.webp",
     route: "Kakinada to Annavaram"
   },
   {
     title: "Pancharamalu",
     category: "Temple Destination",
-    image: "/images/pancharamalu_temple_1774262890629.png",
+    image: "/images/pancharamalu_temple_1774262890629.webp",
     route: "Kakinada to Pancharamalu (5 Temples)"
   },
   {
     title: "Antarvedi",
     category: "Temple Destination",
-    image: "/images/antarvedi_temple_1774262907119.png",
+    image: "/images/antarvedi_temple_1774262907119.webp",
     route: "Kakinada to Antarvedi"
   },
   {
     title: "Badrachalam",
     category: "Temple Destination",
-    image: "/images/badrachalam_temple_1774262924189.png",
+    image: "/images/badrachalam_temple_1774262924189.webp",
     route: "Kakinada to Badrachalam"
   },
   {
     title: "Muramalla",
     category: "Temple Destination",
-    image: "/images/muramalla_temple_1774262943413.png",
+    image: "/images/muramalla_temple_1774262943413.webp",
     route: "Kakinada to Muramalla"
   },
   {
     title: "Vizag",
     category: "Temple Destination",
-    image: "/images/vizag_temple_1774262958167.png",
+    image: "/images/vizag_temple_1774262958167.webp",
     route: "Kakinada to Vizag"
   }
 ];
