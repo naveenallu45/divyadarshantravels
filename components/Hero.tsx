@@ -24,7 +24,7 @@ export default function Hero() {
             <FaMapMarkerAlt /> Kakinada & Rajahmundry
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-4 sm:mb-6">
-            Shareef Car <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Travels</span>
+            Shareef <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Travels</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-neutral-300 mb-6 sm:mb-8 max-w-2xl font-light">
             Experiencing luxurious and reliable rides for your local, outstation, and pilgrimage trips. Available 24/7 with professional drivers.

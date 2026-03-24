@@ -51,7 +51,8 @@ export default function Footer() {
                 { name: 'Home', link: '#home' },
                 { name: 'Services', link: '#services' },
                 { name: 'Packages', link: '#packages' },
-                { name: 'Available Cars', link: '#fleet' }
+                { name: 'Available Cars', link: '#fleet' },
+                { name: 'Testimonials', link: '#testimonials' }
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.link} className="text-neutral-400 hover:text-teal-400 transition-colors flex items-center gap-2 group">
@@ -111,6 +112,22 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+          </div>
+        </div>
+
+        <div className="mb-12">
+          <h4 className="text-xl font-bold text-white mb-6 border-b border-neutral-800 pb-4 inline-block">Google Map Location</h4>
+          <div className="w-full overflow-hidden rounded-2xl border border-neutral-800">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3816.288114211804!2d82.24933229999999!3d16.960372600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a382922b1bb5fd9%3A0xf72528df8eda2df9!2sSHAREEF%20CAR%20TRAVELS!5e0!3m2!1sen!2sin!4v1774328608850!5m2!1sen!2sin"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+            />
           </div>
         </div>
 
