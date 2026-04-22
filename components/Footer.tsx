@@ -159,15 +159,6 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-neutral-300 hover:text-white transition-colors"
             >
-              <span className="relative h-5 w-5 overflow-hidden ">
-                <Image
-                  src="/images/Staffarc-logo.png"
-                  alt="StaffArc"
-                  fill
-                  className="object-cover"
-                  sizes="20px"
-                />
-              </span>
               <span className="font-semibold">StaffArc</span>
             </a>
           </p>
