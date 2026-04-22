@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/luxury_car_araku_1774250758447.png" // The dark luxury SUV driving scene
-          alt="Luxury Car Travels in Kakinada"
+          alt="Luxury Car Travels in Vijayawada"
           fill
           sizes="100vw"
           priority
@@ -21,18 +21,18 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl text-center md:text-left">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-800/80 border border-neutral-700 backdrop-blur-sm text-teal-400 font-medium text-sm mb-6 shadow-xl">
-            <FaMapMarkerAlt /> Kakinada & Rajahmundry
+            <FaMapMarkerAlt /> Vijayawada
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-4 sm:mb-6">
-            Shareef <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Travels</span>
+            Divya Darshan <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Travels</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-neutral-300 mb-6 sm:mb-8 max-w-2xl font-light">
-            Experiencing luxurious and reliable rides for your local, outstation, and pilgrimage trips. Available 24/7 with professional drivers.
+            We do not just move people; we move hearts. Enjoy punctual, transparent, and reliable travel with a divine experience on every trip.
           </p>
 
           <div className="flex flex-row items-center gap-2 sm:gap-4 justify-center md:justify-start w-full">
             <a
-              href={createWhatsAppLink("Hello! I want to book a cab right now.")}
+              href={createWhatsAppLink("Hello Divya Darshan Travels! I want to book a trip. Please share cab options, driver availability, and fare details.")}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-3 sm:px-8 sm:py-4 bg-green-500 hover:bg-green-600 text-white rounded-xl sm:rounded-full flex justify-center items-center gap-2 sm:gap-3 font-semibold text-sm sm:text-lg transition-colors flex-1 sm:flex-none shadow-[0_0_20px_rgba(34,197,94,0.3)] shadow-green-500/20"
@@ -43,7 +43,7 @@ export default function Hero() {
               href={createCallLink()}
               className="px-4 py-3 sm:px-8 sm:py-4 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white rounded-xl sm:rounded-full flex justify-center items-center gap-2 sm:gap-3 font-semibold text-sm sm:text-lg transition-all flex-1 sm:flex-none"
             >
-              <FaPhoneAlt className="text-base sm:text-xl" /> Call <span className="hidden sm:inline">9849576914</span>
+              <FaPhoneAlt className="text-base sm:text-xl" /> Call <span className="hidden sm:inline">9581882895</span>
             </a>
           </div>
         </div>
@@ -67,7 +67,7 @@ const quickStats = [
   {
     icon: <FaMapMarkerAlt size={28} />,
     title: "Wide Coverage",
-    desc: "Kakinada & Surroundings"
+    desc: "Vijayawada & Nearby Areas"
   },
   {
     icon: <FaPhoneAlt size={28} />,

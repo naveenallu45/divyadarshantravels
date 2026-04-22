@@ -1,13 +1,54 @@
 import Image from "next/image";
-import { FaUserFriends, FaSuitcase, FaSnowflake, FaCarSide, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
+import { FaCarSide, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { createWhatsAppLink, createCallLink } from "../lib/utils";
 
-const cars = [
-  { name: "Toyota Innova Crysta", type: "SUV / MUV", seats: "6-7 Seats", luggage: "3 Bags", image: "/images/innova_crysta_1774251695398.webp" },
-  { name: "Maruti Suzuki Ertiga", type: "MUV", seats: "6 Seats", luggage: "2 Bags", image: "/images/ertiga_car_1774251824081.webp" },
-  { name: "Swift Dzire", type: "Sedan", seats: "4 Seats", luggage: "2 Bags", image: "/images/swift_dzire_1774251923889.webp" },
-  { name: "Honda Amaze", type: "Sedan", seats: "4 Seats", luggage: "2 Bags", image: "/images/honda_amaze_1774252003856.webp" },
-  { name: "Toyota Etios", type: "Sedan", seats: "4 Seats", luggage: "2 Bags", image: "/images/toyota_etios.webp" }
+const vehicleSections = [
+  {
+    title: "5 Seaters",
+    vehicles: [
+      { name: "Desire", image: "https://source.unsplash.com/800x500/?maruti,dzire,car" },
+      { name: "Amaze", image: "https://source.unsplash.com/800x500/?honda,amaze,car" },
+      { name: "Sonet", image: "https://source.unsplash.com/800x500/?kia,sonet,suv" },
+      { name: "Brezza", image: "https://source.unsplash.com/800x500/?brezza,suv,car" },
+      { name: "Ciaz", image: "https://source.unsplash.com/800x500/?ciaz,sedan,car" },
+      { name: "Etios", image: "https://source.unsplash.com/800x500/?toyota,etios,car" },
+      { name: "Xcent", image: "https://source.unsplash.com/800x500/?hyundai,xcent,sedan" },
+      { name: "Zest", image: "https://source.unsplash.com/800x500/?tata,zest,car" },
+      { name: "Wagonr", image: "https://source.unsplash.com/800x500/?wagonr,hatchback,car" },
+    ],
+  },
+  {
+    title: "7 Seaters",
+    vehicles: [
+      { name: "Innova", image: "https://source.unsplash.com/800x500/?toyota,innova,muv" },
+      { name: "Innova Crysta", image: "https://source.unsplash.com/800x500/?innova,crysta,car" },
+      { name: "Innova Hycross", image: "https://source.unsplash.com/800x500/?toyota,hycross,suv" },
+      { name: "Ertiga", image: "https://source.unsplash.com/800x500/?maruti,ertiga,muv" },
+      { name: "XL6", image: "https://source.unsplash.com/800x500/?maruti,xl6,car" },
+      { name: "Carens", image: "https://source.unsplash.com/800x500/?kia,carens,car" },
+    ],
+  },
+  {
+    title: "12 Seaters",
+    vehicles: [
+      { name: "Tempo Traveller 2+1", image: "https://source.unsplash.com/800x500/?tempo,traveller,van" },
+      { name: "Tempo Traveller 1+1", image: "https://source.unsplash.com/800x500/?traveller,minibus,india" },
+      { name: "Urbania", image: "https://source.unsplash.com/800x500/?force,urbania,bus" },
+      { name: "SML 12 Seater", image: "https://source.unsplash.com/800x500/?minibus,transport,vehicle" },
+    ],
+  },
+  {
+    title: "16 To 40 Seaters",
+    vehicles: [
+      { name: "Tempo Traveller 17 Seater", image: "https://source.unsplash.com/800x500/?tempo,traveller,bus" },
+      { name: "Urbania 16 Seater", image: "https://source.unsplash.com/800x500/?urbania,shuttle,bus" },
+      { name: "Mono Bus 22 Seater", image: "https://source.unsplash.com/800x500/?mini,bus,coach" },
+      { name: "SML 24 To 27 Seater", image: "https://source.unsplash.com/800x500/?sml,bus,transport" },
+      { name: "Bharat Benz 24 To 27 Seater", image: "https://source.unsplash.com/800x500/?bharatbenz,bus,coach" },
+      { name: "Eicher 30 To 32 Seater", image: "https://source.unsplash.com/800x500/?eicher,bus,india" },
+      { name: "40 To 50 Seater Buses", image: "https://source.unsplash.com/800x500/?tourist,bus,highway" },
+    ],
+  },
 ];
 
 export default function Cars() {
@@ -15,78 +56,84 @@ export default function Cars() {
     <section id="fleet" className="py-16 md:py-24 bg-neutral-950 border-t border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-3 mb-4 rounded-full bg-neutral-900 shadow-xl border border-neutral-800">
-            <FaCarSide size={24} className="text-teal-400" />
-            <span className="ml-3 font-semibold text-neutral-300 pr-2">Available cars</span>
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-2 mb-5 rounded-full bg-gradient-to-r from-teal-500/20 to-emerald-500/20 border border-teal-500/30 shadow-xl">
+            <FaCarSide size={18} className="text-teal-300" />
+            <span className="font-semibold text-teal-100 tracking-wide">Available Vehicles</span>
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Drive In <span className="text-teal-400">Comfort</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-3">
+            Pick The Right <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-emerald-400">Vehicle Category</span>
           </h2>
           <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-            Well-maintained and sanitized vehicles for every type of journey. Always operated by professional drivers.
+            Multiple seating options available for family trips, group tours, and business travel with professional drivers.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {cars.map((car, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {vehicleSections.map((section) => (
             <div
-              key={idx}
-              className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:shadow-[0_0_30px_rgba(20,184,166,0.1)] transition-all hover:bg-neutral-800/80 group"
+              key={section.title}
+              className="bg-gradient-to-br from-neutral-900 to-neutral-900/70 border border-neutral-800 rounded-2xl p-6 hover:shadow-[0_0_30px_rgba(20,184,166,0.14)] transition-all hover:border-teal-500/30"
             >
-              <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden shadow-inner bg-neutral-950">
-                <Image
-                  src={car.image}
-                  alt={car.name}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  priority={idx < 2}
-                  loading={idx < 2 ? "eager" : "lazy"}
-                  unoptimized
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+              <div className="mb-4 flex items-center justify-between border-b border-neutral-800 pb-3">
+                <h3 className="text-2xl font-bold text-white">{section.title}</h3>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-neutral-800 text-teal-300 border border-neutral-700">
+                  {section.vehicles.length} Vehicles
+                </span>
               </div>
 
-              <div className="flex justify-between items-start mb-6 border-b border-neutral-800 pb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-teal-400 transition-colors">{car.name}</h3>
-                  <p className="text-neutral-500 font-medium">{car.type}</p>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-3 gap-2 mb-2">
-                <div className="flex flex-col items-center p-3 bg-neutral-950/50 rounded-lg">
-                  <FaUserFriends className="text-neutral-400 mb-1" />
-                  <span className="text-xs font-semibold text-neutral-300">{car.seats}</span>
-                </div>
-                <div className="flex flex-col items-center p-3 bg-neutral-950/50 rounded-lg">
-                  <FaSuitcase className="text-neutral-400 mb-1" />
-                  <span className="text-xs font-semibold text-neutral-300">{car.luggage}</span>
-                </div>
-                <div className="flex flex-col items-center p-3 bg-neutral-950/50 rounded-lg">
-                  <FaSnowflake className="text-neutral-400 mb-1" />
-                  <span className="text-xs font-semibold text-neutral-300">AC</span>
-                </div>
-              </div>
-
-              <div className="flex gap-2 mt-4 pt-4 border-t border-neutral-800">
-                <a
-                  href={createWhatsAppLink(`Hello! I would like to book the ${car.name}.`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 transition-colors text-[13px]"
-                >
-                  <FaWhatsapp size={16} /> WhatsApp
-                </a>
-                <a
-                  href={createCallLink()}
-                  className="flex-1 bg-neutral-800 hover:bg-neutral-700 text-white font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 transition-colors border border-neutral-700 text-[13px]"
-                >
-                  <FaPhoneAlt size={14} /> Call Now
-                </a>
-              </div>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {section.vehicles.map((vehicle) => (
+                  <li key={vehicle.name} className="text-neutral-300 bg-neutral-950/60 border border-neutral-800 rounded-xl p-3 hover:border-teal-500/30 transition-colors">
+                    <div className="mb-3 h-24 rounded-lg overflow-hidden border border-neutral-700 bg-neutral-900/70">
+                      <Image
+                        src={vehicle.image}
+                        alt={vehicle.name}
+                        width={800}
+                        height={500}
+                        unoptimized
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                    <h4 className="text-white font-semibold mb-3">{vehicle.name}</h4>
+                    <div className="flex gap-2">
+                      <a
+                        href={createWhatsAppLink(`Hello Divya Darshan Travels! I want to book the ${vehicle.name}. Please share price and availability.`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-2 rounded-lg flex items-center justify-center gap-1.5 transition-colors text-xs"
+                      >
+                        <FaWhatsapp size={14} /> WhatsApp
+                      </a>
+                      <a
+                        href={createCallLink()}
+                        className="flex-1 bg-neutral-800 hover:bg-neutral-700 text-white font-semibold py-2 px-2 rounded-lg flex items-center justify-center gap-1.5 transition-colors border border-neutral-700 text-xs"
+                      >
+                        <FaPhoneAlt size={12} /> Call Now
+                      </a>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3 mt-10">
+          <a
+            href={createWhatsAppLink("Hello Divya Darshan Travels! Please share complete vehicle list with pricing and availability.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors"
+          >
+            <FaWhatsapp size={17} /> Check All Vehicles on WhatsApp
+          </a>
+          <a
+            href={createCallLink()}
+            className="flex-1 bg-neutral-800 hover:bg-neutral-700 text-white font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors border border-neutral-700"
+          >
+            <FaPhoneAlt size={15} /> Call for Vehicle Booking
+          </a>
         </div>
       </div>
     </section>

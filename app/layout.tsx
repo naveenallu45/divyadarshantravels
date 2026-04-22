@@ -8,8 +8,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Shareef Travels | Kakinada & Rajahmundry",
-  description: "Premium car travels in Kakinada & Rajahmundry. Local trips, outstation, airport pickups, and pilgrimage packages.",
+  title: {
+    default: "Divya Darshan Travels | Vijayawada",
+    template: "%s | Divya Darshan Travels",
+  },
+  description:
+    "Divya Darshan Travels offers trusted 24/7 travel agency services in Vijayawada including mini bus taxi services, car rentals, taxi services, and on-demand drivers.",
+  keywords: [
+    "Divya Darshan Travels",
+    "Vijayawada travel agency",
+    "Mini bus taxi services",
+    "Car rentals Vijayawada",
+    "Taxi services Vijayawada",
+    "On-demand drivers",
+  ],
 };
 
 export default function RootLayout({

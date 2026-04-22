@@ -2,36 +2,36 @@ import { FaCarSide, FaMapMarkedAlt, FaCity, FaPlane, FaRoute, FaStar } from "rea
 
 const leftServices = [
   {
-    title: "Car Rentals",
-    desc: "Hire premium cars for standard daily rental.",
+    title: "Travel Agency",
+    desc: "Complete trip planning support with transparent pricing and timely service.",
     icon: <FaCarSide size={24} className="text-teal-400" />,
   },
   {
-    title: "Round Trips",
-    desc: "Best quotes for round trips from any point.",
+    title: "Mini Bus Taxi Services",
+    desc: "Comfortable mini bus options for families, groups, and pilgrim tours.",
     icon: <FaRoute size={24} className="text-blue-400" />,
   },
   {
-    title: "Local Trips",
-    desc: "Explore the city, run errands with ease.",
+    title: "Car Rentals",
+    desc: "Well-maintained cars with professional drivers for local and outstation trips.",
     icon: <FaCity size={24} className="text-purple-400" />,
   },
 ];
 
 const rightServices = [
   {
-    title: "Airport Drops",
-    desc: "Punctual transfers to ensure you never miss flights.",
+    title: "Taxi Services",
+    desc: "Door-to-door taxi rides with reliable pickups and safe travel experience.",
     icon: <FaPlane size={24} className="text-amber-400" />,
   },
   {
-    title: "Outstation",
-    desc: "Long-distance journeys made comfortable.",
+    title: "On-Demand Drivers",
+    desc: "Temporary halting drivers available on demand for flexible travel needs.",
     icon: <FaMapMarkedAlt size={24} className="text-rose-400" />,
   },
   {
-    title: "Event Transport",
-    desc: "Reliable transport for weddings & functions.",
+    title: "24/7 Support",
+    desc: "Any day, any time booking assistance for urgent and planned travel.",
     icon: <FaStar size={24} className="text-emerald-400" />,
   },
 ];
@@ -44,10 +44,10 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Our <span className="text-teal-400">Services</span>
+            <span className="text-teal-400">Services</span>
           </h2>
           <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-            A fleet tailored to your needs. Note: All our cars are provided <strong className="text-white">with professional drivers only</strong>.
+            We deliver a divine travel experience with punctuality, transparent pricing, and professional drivers for every ride.
           </p>
         </div>
 

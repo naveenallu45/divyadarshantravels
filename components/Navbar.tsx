@@ -12,7 +12,7 @@ const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Services", href: "#services" },
   { name: "Packages", href: "#packages" },
-  { name: "Available Cars", href: "#fleet" },
+  { name: "Available Vehicles", href: "#fleet" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -40,17 +40,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link href="#home" className="flex items-center gap-3">
-            <div className="relative w-16 h-16 md:w-12 md:h-12 rounded-full overflow-hidden border border-neutral-700">
+            <div className="relative w-16 h-16 md:w-12 md:h-12 rounded-full overflow-hidden border border-neutral-700 bg-white p-1">
               <Image
-                src="https://res.cloudinary.com/dpepzphqf/image/upload/v1774249988/WhatsApp_Image_2026-03-23_at_11.05.32_AM_wtucc5.jpg"
-                alt="Shareef Travels Logo"
+                src="/images/divya-darshan-logo.png"
+                alt="Divya Darshan Travels Logo"
                 fill
                 sizes="(min-width: 768px) 48px, 64px"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <span className="font-bold text-xl tracking-tight hidden sm:block">
-              Shareef <span className="text-teal-400">Travels</span>
+              Divya Darshan <span className="text-teal-400">Travels</span>
             </span>
           </Link>
 
@@ -66,7 +66,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href={createWhatsAppLink("Hello! I want to enquire about a trip.")}
+              href={createWhatsAppLink("Hello Divya Darshan Travels! I would like to enquire about your travel services. Please share details and pricing.")}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center gap-2 font-medium transition-colors"
@@ -116,7 +116,7 @@ export default function Navbar() {
                   <FaPhoneAlt /> Call Us
                 </a>
                 <a
-                  href={createWhatsAppLink("Hello! I want to enquire about a trip.")}
+                  href={createWhatsAppLink("Hello Divya Darshan Travels! I would like to enquire about your travel services. Please share details and pricing.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-green-600 hover:bg-green-500 text-white rounded-md font-medium"

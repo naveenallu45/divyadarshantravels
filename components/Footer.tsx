@@ -11,31 +11,34 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="flex flex-col gap-6">
             <Link href="#home" className="flex items-center gap-4">
-              <div className="relative w-20 h-20 md:w-16 md:h-16 rounded-full overflow-hidden shadow-lg border-2 border-neutral-800 flex-shrink-0">
+              <div className="relative w-20 h-20 md:w-16 md:h-16 rounded-full overflow-hidden shadow-lg border-2 border-neutral-800 bg-white p-1 flex-shrink-0">
                 <Image
-                  src="https://res.cloudinary.com/dpepzphqf/image/upload/v1774249988/WhatsApp_Image_2026-03-23_at_11.05.32_AM_wtucc5.jpg"
-                  alt="Shareef Travels Logo"
+                  src="/images/divya-darshan-logo.png"
+                  alt="Divya Darshan Travels Logo"
                   fill
                   sizes="(min-width: 768px) 64px, 80px"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <div>
                 <h3 className="text-2xl font-bold tracking-tight text-white mb-1">
-                  Shareef <span className="text-teal-400">Travels</span>
+                  Divya Darshan <span className="text-teal-400">Travels</span>
                 </h3>
                 <p className="text-sm font-medium text-neutral-500 uppercase tracking-widest">Premium Rides</p>
               </div>
             </Link>
             <p className="text-neutral-400 leading-relaxed max-w-sm">
-              Offering top-tier cab booking services in Kakinada and Rajahmundry. Your reliable partner for safe, comfortable, and affordable rides. All cars provided with professional drivers.
+              At Divya Darshan Travels, we do not just move people; we move hearts. We aim to be Vijayawada&apos;s most trusted travel partner, known for punctuality, transparent pricing, and a divine travel experience.
+            </p>
+            <p className="text-neutral-500 italic text-sm max-w-sm">
+              Let&apos;s explore the beauty of India together. Your seat is waiting!
             </p>
             
             <div className="flex items-center space-x-5 pt-2">
-              <a href="https://www.facebook.com/share/1BED612BVm/" target="_blank" rel="noopener noreferrer" className="p-3 bg-neutral-900 border border-neutral-800 rounded-full text-neutral-400 hover:text-white hover:bg-teal-500 hover:border-teal-500 transition-all">
+              <a href="https://www.facebook.com/share/1Dnyu2MDvW/" target="_blank" rel="noopener noreferrer" className="p-3 bg-neutral-900 border border-neutral-800 rounded-full text-neutral-400 hover:text-white hover:bg-teal-500 hover:border-teal-500 transition-all">
                 <FaFacebook size={20} />
               </a>
-              <a href="https://www.instagram.com/helloshareef?igsh=aGx3b3o4aTc2b2Ni" target="_blank" rel="noopener noreferrer" className="p-3 bg-neutral-900 border border-neutral-800 rounded-full text-neutral-400 hover:text-white hover:bg-pink-600 hover:border-pink-600 transition-all">
+              <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=h6lu30u" target="_blank" rel="noopener noreferrer" className="p-3 bg-neutral-900 border border-neutral-800 rounded-full text-neutral-400 hover:text-white hover:bg-pink-600 hover:border-pink-600 transition-all">
                 <FaInstagram size={20} />
               </a>
             </div>
@@ -51,7 +54,7 @@ export default function Footer() {
                 { name: 'Home', link: '#home' },
                 { name: 'Services', link: '#services' },
                 { name: 'Packages', link: '#packages' },
-                { name: 'Available Cars', link: '#fleet' },
+                { name: 'Available Vehicles', link: '#fleet' },
                 { name: 'Testimonials', link: '#testimonials' }
               ].map((item) => (
                 <li key={item.name}>
@@ -75,9 +78,8 @@ export default function Footer() {
                 <div>
                   <strong className="block text-white mb-1 text-sm sm:text-base">Office Location</strong>
                   <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed">
-                    3-3-11 Vinayaka temple street<br />
-                    Recharlapeta<br />
-                    Kakinada, Sambhamurthy Nagar<br />
+                    Ballem Vaari Street<br />
+                    Vijayawada - 521108<br />
                     Andhra Pradesh
                   </p>
                 </div>
@@ -89,11 +91,11 @@ export default function Footer() {
                     <div className="text-blue-400 group-hover:scale-110 transition-transform">
                       <FaPhoneAlt size={14} className="sm:text-[18px]" />
                     </div>
-                    <span className="text-neutral-300 font-medium text-xs sm:text-sm">9849576914</span>
+                    <span className="text-neutral-300 font-medium text-xs sm:text-sm">9581882895</span>
                   </a>
                 </div>
                 <div className="flex gap-2 sm:gap-4">
-                  <a href={createWhatsAppLink("Hello! I want to book a trip.")} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 sm:gap-3 bg-green-900/20 border border-green-800/30 px-3 py-2 sm:px-4 sm:py-3 rounded-xl hover:bg-green-900/40 transition-colors w-full group">
+                  <a href={createWhatsAppLink("Hello Divya Darshan Travels! I want to book a trip. Please share cab options, driver availability, and fare details.")} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 sm:gap-3 bg-green-900/20 border border-green-800/30 px-3 py-2 sm:px-4 sm:py-3 rounded-xl hover:bg-green-900/40 transition-colors w-full group">
                     <div className="text-green-500 group-hover:scale-110 transition-transform">
                       <FaWhatsapp size={16} className="sm:text-[20px]" />
                     </div>
@@ -106,8 +108,8 @@ export default function Footer() {
                 <div className="bg-neutral-900 p-2 sm:p-3 rounded-xl border border-neutral-800 text-rose-400 flex-shrink-0">
                   <FaEnvelope size={14} className="sm:text-[20px]" />
                 </div>
-                <a href="mailto:khashimshareef56786@gmail.com" className="text-neutral-300 hover:text-white transition-colors text-xs sm:text-sm font-medium break-all">
-                  khashimshareef56786@gmail.com
+                <a href="mailto:divyadarshantravels0199@gmail.com" className="text-neutral-300 hover:text-white transition-colors text-xs sm:text-sm font-medium break-all">
+                  divyadarshantravels0199@gmail.com
                 </a>
               </li>
             </ul>
@@ -115,28 +117,39 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mb-12">
-          <h4 className="text-xl font-bold text-white mb-6 border-b border-neutral-800 pb-4 inline-block">Google Map Location</h4>
-          <div className="w-full overflow-hidden rounded-2xl border border-neutral-800">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3816.288114211804!2d82.24933229999999!3d16.960372600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a382922b1bb5fd9%3A0xf72528df8eda2df9!2sSHAREEF%20CAR%20TRAVELS!5e0!3m2!1sen!2sin!4v1774328608850!5m2!1sen!2sin"
-              width="600"
-              height="270"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full"
-            />
+        <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div>
+            <h4 className="text-xl font-bold text-white mb-6 border-b border-neutral-800 pb-4 inline-block">Business Hours</h4>
+            <div className="w-full overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 sm:p-6">
+              <div className="flex items-center justify-between gap-3 text-sm sm:text-base">
+                <span className="text-neutral-300">Monday - Sunday</span>
+                <span className="text-teal-400 font-semibold">Open 24/7</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 className="text-xl font-bold text-white mb-6 border-b border-neutral-800 pb-4 inline-block">Google Map Location</h4>
+            <div className="w-full overflow-hidden rounded-2xl border border-neutral-800">
+              <iframe
+                src="https://maps.google.com/maps?q=Ballem%20Vaari%20Street%20Vijayawada%20521108&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="600"
+                height="270"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+              />
+            </div>
           </div>
         </div>
 
         <div className="pt-8 border-t border-neutral-900 text-center flex flex-col items-center gap-2">
           <p className="text-neutral-500 font-medium tracking-wide">
-            © {new Date().getFullYear()} Shareef Travels. All rights reserved.
+            © {new Date().getFullYear()} Divya Darshan Travels. All rights reserved.
           </p>
           <p className="text-neutral-600 text-sm">
-            Cab Services in Kakinada & Rajahmundry
+            Travel Agency, Mini Bus Taxi Services, Car Rentals, Taxi Services, and On-Demand Drivers in Vijayawada
           </p>
           <p className="text-neutral-500 text-sm flex items-center gap-2">
             <span>Made with ❤️ by</span>

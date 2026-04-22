@@ -1,7 +1,7 @@
 const testimonials = [
   { name: "Mohan Sai", text: "Very smooth booking process and excellent driver behavior. Highly recommended for family trips." },
   { name: "Ganesh Challa", text: "Clean car, on-time pickup, and comfortable ride throughout the journey." },
-  { name: "Nani", text: "Great service and fair pricing. I will definitely book Shareef Travels again." }
+  { name: "Nani", text: "Great service and fair pricing. I will definitely book Divya Darshan Travels again." }
 ];
 
 export default function Testimonials() {
@@ -16,7 +16,7 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((item) => (
             <article key={item.name} className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6 shadow-lg">
-              <p className="text-neutral-300 leading-relaxed mb-5">"{item.text}"</p>
+              <p className="text-neutral-300 leading-relaxed mb-5">&quot;{item.text}&quot;</p>
               <p className="text-white font-semibold">{item.name}</p>
             </article>
           ))}
