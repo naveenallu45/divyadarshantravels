@@ -8,12 +8,12 @@ export default function Hero() {
       {/* Background Image Area */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/luxury_car_araku_1774250758447.png" // The dark luxury SUV driving scene
-          alt="Luxury Car Travels in Vijayawada"
+          src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+          alt="Scenic Travel Background"
           fill
           sizes="100vw"
           priority
-          className="object-cover opacity-60"
+          className="object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/60 to-neutral-950/80"></div>
       </div>

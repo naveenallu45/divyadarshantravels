@@ -6,47 +6,47 @@ const vehicleSections = [
   {
     title: "5 Seaters",
     vehicles: [
-      { name: "Desire", image: "https://source.unsplash.com/800x500/?maruti,dzire,car" },
-      { name: "Amaze", image: "https://source.unsplash.com/800x500/?honda,amaze,car" },
-      { name: "Sonet", image: "https://source.unsplash.com/800x500/?kia,sonet,suv" },
-      { name: "Brezza", image: "https://source.unsplash.com/800x500/?brezza,suv,car" },
-      { name: "Ciaz", image: "https://source.unsplash.com/800x500/?ciaz,sedan,car" },
-      { name: "Etios", image: "https://source.unsplash.com/800x500/?toyota,etios,car" },
-      { name: "Xcent", image: "https://source.unsplash.com/800x500/?hyundai,xcent,sedan" },
-      { name: "Zest", image: "https://source.unsplash.com/800x500/?tata,zest,car" },
-      { name: "Wagonr", image: "https://source.unsplash.com/800x500/?wagonr,hatchback,car" },
+      { name: "Desire", image: "/cars/dzire.webp" },
+      { name: "Amaze", image: "/cars/amaze.webp" },
+      { name: "Sonet", image: "/cars/sonet.webp" },
+      { name: "Brezza", image: "/cars/brezza.webp" },
+      { name: "Ciaz", image: "/cars/ciaz.webp" },
+      { name: "Etios", image: "/cars/etios.webp" },
+      { name: "Xcent", image: "/cars/xcent.webp" },
+      { name: "Zest", image: "/cars/zest.webp" },
+      { name: "Wagonr", image: "/cars/wagonr.webp" },
     ],
   },
   {
     title: "7 Seaters",
     vehicles: [
-      { name: "Innova", image: "https://source.unsplash.com/800x500/?toyota,innova,muv" },
-      { name: "Innova Crysta", image: "https://source.unsplash.com/800x500/?innova,crysta,car" },
-      { name: "Innova Hycross", image: "https://source.unsplash.com/800x500/?toyota,hycross,suv" },
-      { name: "Ertiga", image: "https://source.unsplash.com/800x500/?maruti,ertiga,muv" },
-      { name: "XL6", image: "https://source.unsplash.com/800x500/?maruti,xl6,car" },
-      { name: "Carens", image: "https://source.unsplash.com/800x500/?kia,carens,car" },
+      { name: "Innova", image: "/cars/innova.webp" },
+      { name: "Innova Crysta", image: "/cars/innova_crysta.webp" },
+      { name: "Innova Hycross", image: "/cars/innova_hycross.webp" },
+      { name: "Ertiga", image: "/cars/ertiga.webp" },
+      { name: "XL6", image: "/cars/xl6.webp" },
+      { name: "Carens", image: "/cars/carens.webp" },
     ],
   },
   {
     title: "12 Seaters",
     vehicles: [
-      { name: "Tempo Traveller 2+1", image: "https://source.unsplash.com/800x500/?tempo,traveller,van" },
-      { name: "Tempo Traveller 1+1", image: "https://source.unsplash.com/800x500/?traveller,minibus,india" },
-      { name: "Urbania", image: "https://source.unsplash.com/800x500/?force,urbania,bus" },
-      { name: "SML 12 Seater", image: "https://source.unsplash.com/800x500/?minibus,transport,vehicle" },
+      { name: "Tempo Traveller 2+1", image: "/cars/tempo_traveller_2_1.webp" },
+      { name: "Tempo Traveller 1+1", image: "/cars/tempo_traveller_1_1.webp" },
+      { name: "Urbania", image: "/cars/urbania.webp" },
+      { name: "SML 12 Seater", image: "/cars/sml_12_seater.webp" },
     ],
   },
   {
     title: "16 To 40 Seaters",
     vehicles: [
-      { name: "Tempo Traveller 17 Seater", image: "https://source.unsplash.com/800x500/?tempo,traveller,bus" },
-      { name: "Urbania 16 Seater", image: "https://source.unsplash.com/800x500/?urbania,shuttle,bus" },
-      { name: "Mono Bus 22 Seater", image: "https://source.unsplash.com/800x500/?mini,bus,coach" },
-      { name: "SML 24 To 27 Seater", image: "https://source.unsplash.com/800x500/?sml,bus,transport" },
-      { name: "Bharat Benz 24 To 27 Seater", image: "https://source.unsplash.com/800x500/?bharatbenz,bus,coach" },
-      { name: "Eicher 30 To 32 Seater", image: "https://source.unsplash.com/800x500/?eicher,bus,india" },
-      { name: "40 To 50 Seater Buses", image: "https://source.unsplash.com/800x500/?tourist,bus,highway" },
+      { name: "Tempo Traveller 17 Seater", image: "/cars/tempo_traveller_17_seater.webp" },
+      { name: "Urbania 16 Seater", image: "/cars/urbania_16_seater.webp" },
+      { name: "Mono Bus 22 Seater", image: "/cars/mono_bus_22_seater.webp" },
+      { name: "SML 24 To 27 Seater", image: "/cars/sml_24_to_27_seater.webp" },
+      { name: "Bharat Benz 24 To 27 Seater", image: "/cars/bharat_benz_24_to_27_seater.webp" },
+      { name: "Eicher 30 To 32 Seater", image: "/cars/eicher_30_to_32_seater.webp" },
+      { name: "40 To 50 Seater Buses", image: "/cars/40_to_50_seater_buses.webp" },
     ],
   },
 ];
@@ -85,7 +85,7 @@ export default function Cars() {
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {section.vehicles.map((vehicle) => (
                   <li key={vehicle.name} className="text-neutral-300 bg-neutral-950/60 border border-neutral-800 rounded-xl p-3 hover:border-teal-500/30 transition-colors">
-                    <div className="mb-3 h-24 rounded-lg overflow-hidden border border-neutral-700 bg-neutral-900/70">
+                    <div className="mb-3 h-56 md:h-48 rounded-lg overflow-hidden border border-neutral-700 bg-neutral-900/70">
                       <Image
                         src={vehicle.image}
                         alt={vehicle.name}
