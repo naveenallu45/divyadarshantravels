@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,34 +17,22 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-neutral-950/80 backdrop-blur-md shadow-lg py-3" : "bg-transparent py-5"
-      }`}
+      initial={false}
+      className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-neutral-950/30 backdrop-blur-md"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between py-2">
           <Link href="#home" className="flex items-center gap-3">
             <div className="relative w-16 h-16 md:w-12 md:h-12 rounded-full overflow-hidden border border-neutral-700 bg-white p-1">
               <Image
                 src="/images/divya-darshan-logo.png"
                 alt="Divya Darshan Travels Logo"
                 fill
+                priority
                 sizes="(min-width: 768px) 48px, 64px"
                 className="object-contain"
               />
@@ -95,7 +83,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-neutral-900 border-t border-neutral-800"
+            className="md:hidden border-t border-white/10 bg-neutral-950/70 backdrop-blur-md"
           >
             <div className="px-4 pt-2 pb-6 space-y-1 sm:px-3">
               {navLinks.map((link) => (

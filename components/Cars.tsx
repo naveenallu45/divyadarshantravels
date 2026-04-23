@@ -1,4 +1,7 @@
+ "use client";
+
 import Image from "next/image";
+import { useMemo, useState } from "react";
 import { FaCarSide, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { createWhatsAppLink, createCallLink } from "../lib/utils";
 
@@ -52,6 +55,60 @@ const vehicleSections = [
 ];
 
 export default function Cars() {
+  const [selectedCategory, setSelectedCategory] = useState(vehicleSections[0].title);
+  const selectedSection = useMemo(
+    () => vehicleSections.find((section) => section.title === selectedCategory) ?? vehicleSections[0],
+    [selectedCategory]
+  );
+
+  const renderSection = (section: (typeof vehicleSections)[number]) => (
+    <div
+      key={section.title}
+      className="bg-gradient-to-br from-neutral-900 to-neutral-900/70 border border-neutral-800 rounded-2xl p-6 hover:shadow-[0_0_30px_rgba(20,184,166,0.14)] transition-all hover:border-teal-500/30"
+    >
+      <div className="mb-4 flex items-center justify-between border-b border-neutral-800 pb-3">
+        <h3 className="text-2xl font-bold text-white">{section.title}</h3>
+        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-neutral-800 text-teal-300 border border-neutral-700">
+          {section.vehicles.length} Vehicles
+        </span>
+      </div>
+
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {section.vehicles.map((vehicle) => (
+          <li key={vehicle.name} className="text-neutral-300 bg-neutral-950/60 border border-neutral-800 rounded-xl p-3 hover:border-teal-500/30 transition-colors">
+            <div className="mb-3 h-56 md:h-48 rounded-lg overflow-hidden border border-neutral-700 bg-neutral-900/70">
+              <Image
+                src={vehicle.image}
+                alt={vehicle.name}
+                width={800}
+                height={500}
+                unoptimized
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <h4 className="text-white font-semibold mb-3">{vehicle.name}</h4>
+            <div className="flex gap-2">
+              <a
+                href={createWhatsAppLink(`Hello Divya Darshan Travels! I want to book the ${vehicle.name}. Please share price and availability.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-2 rounded-lg flex items-center justify-center gap-1.5 transition-colors text-xs"
+              >
+                <FaWhatsapp size={14} /> WhatsApp
+              </a>
+              <a
+                href={createCallLink()}
+                className="flex-1 bg-neutral-800 hover:bg-neutral-700 text-white font-semibold py-2 px-2 rounded-lg flex items-center justify-center gap-1.5 transition-colors border border-neutral-700 text-xs"
+              >
+                <FaPhoneAlt size={12} /> Call Now
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
   return (
     <section id="fleet" className="py-16 md:py-24 bg-neutral-950 border-t border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,54 +126,36 @@ export default function Cars() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {vehicleSections.map((section) => (
-            <div
-              key={section.title}
-              className="bg-gradient-to-br from-neutral-900 to-neutral-900/70 border border-neutral-800 rounded-2xl p-6 hover:shadow-[0_0_30px_rgba(20,184,166,0.14)] transition-all hover:border-teal-500/30"
-            >
-              <div className="mb-4 flex items-center justify-between border-b border-neutral-800 pb-3">
-                <h3 className="text-2xl font-bold text-white">{section.title}</h3>
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-neutral-800 text-teal-300 border border-neutral-700">
-                  {section.vehicles.length} Vehicles
-                </span>
-              </div>
+        <div className="mb-5 md:hidden">
+          <p className="mb-2 text-center text-sm font-semibold text-neutral-200">Select Category</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {vehicleSections.map((section) => {
+              const isActive = selectedCategory === section.title;
+              return (
+                <button
+                  key={section.title}
+                  type="button"
+                  onClick={() => setSelectedCategory(section.title)}
+                  aria-pressed={isActive}
+                  className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors ${
+                    isActive
+                      ? "border-teal-500 bg-teal-500/20 text-teal-200"
+                      : "border-neutral-700 bg-neutral-900 text-neutral-300"
+                  }`}
+                >
+                  {section.title}
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {section.vehicles.map((vehicle) => (
-                  <li key={vehicle.name} className="text-neutral-300 bg-neutral-950/60 border border-neutral-800 rounded-xl p-3 hover:border-teal-500/30 transition-colors">
-                    <div className="mb-3 h-56 md:h-48 rounded-lg overflow-hidden border border-neutral-700 bg-neutral-900/70">
-                      <Image
-                        src={vehicle.image}
-                        alt={vehicle.name}
-                        width={800}
-                        height={500}
-                        unoptimized
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                    <h4 className="text-white font-semibold mb-3">{vehicle.name}</h4>
-                    <div className="flex gap-2">
-                      <a
-                        href={createWhatsAppLink(`Hello Divya Darshan Travels! I want to book the ${vehicle.name}. Please share price and availability.`)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-2 rounded-lg flex items-center justify-center gap-1.5 transition-colors text-xs"
-                      >
-                        <FaWhatsapp size={14} /> WhatsApp
-                      </a>
-                      <a
-                        href={createCallLink()}
-                        className="flex-1 bg-neutral-800 hover:bg-neutral-700 text-white font-semibold py-2 px-2 rounded-lg flex items-center justify-center gap-1.5 transition-colors border border-neutral-700 text-xs"
-                      >
-                        <FaPhoneAlt size={12} /> Call Now
-                      </a>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="md:hidden">
+          {renderSection(selectedSection)}
+        </div>
+
+        <div className="hidden grid-cols-1 gap-6 md:grid md:grid-cols-2 lg:gap-8">
+          {vehicleSections.map((section) => renderSection(section))}
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 mt-10">
