@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { createElement, useMemo, useState } from "react";
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { createWhatsAppLink, createCallLink } from "../lib/utils";
 
@@ -70,7 +70,15 @@ const packageCategories: PackageCategory[] = [
   },
 ];
 
-function PackageCard({ pkg, categoryTitle }: { pkg: PackageItem; categoryTitle: string }) {
+function PackageCard({
+  pkg,
+  categoryTitle,
+  titleHeading,
+}: {
+  pkg: PackageItem;
+  categoryTitle: string;
+  titleHeading: "h3" | "h4";
+}) {
   const prefilledMessage = `Hello Divya Darshan Travels! I am interested in the "${pkg.title}" package (${categoryTitle}). Destinations: ${pkg.destinations.join(", ")}. Please share fare details and availability.`;
 
   return (
@@ -88,7 +96,11 @@ function PackageCard({ pkg, categoryTitle }: { pkg: PackageItem; categoryTitle: 
       </div>
 
       <div className="flex flex-1 flex-col p-4 sm:p-5">
-        <h4 className="mb-3 text-lg font-bold leading-tight text-white">{pkg.title}</h4>
+        {createElement(
+          titleHeading,
+          { className: "mb-3 text-lg font-bold leading-tight text-white" },
+          pkg.title
+        )}
 
         <ul className="mb-5 grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-neutral-300">
           {pkg.destinations.map((destination) => (
@@ -122,24 +134,38 @@ function PackageCard({ pkg, categoryTitle }: { pkg: PackageItem; categoryTitle: 
   );
 }
 
-export default function Packages() {
+type PackagesProps = { omitPageHeading?: boolean };
+
+export default function Packages({ omitPageHeading = false }: PackagesProps = {}) {
   const [selectedCategoryId, setSelectedCategoryId] = useState(packageCategories[0].id);
   const selectedCategory = useMemo(
     () => packageCategories.find((category) => category.id === selectedCategoryId) ?? packageCategories[0],
     [selectedCategoryId]
   );
 
-  const renderCategorySection = (category: PackageCategory) => (
+  const packageTitleHeading: "h3" | "h4" = omitPageHeading ? "h3" : "h4";
+
+  const renderCategorySection = (category: PackageCategory, omitPageHeading: boolean) => (
     <section key={category.id} aria-labelledby={category.id}>
       <div className="mb-6">
-        <h3 id={category.id} className="text-2xl font-bold text-white md:text-3xl">
-          {category.title}
-        </h3>
+        {createElement(
+          omitPageHeading ? "h2" : "h3",
+          {
+            id: category.id,
+            className: "text-2xl font-bold text-white md:text-3xl",
+          },
+          category.title
+        )}
       </div>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {category.packages.map((pkg) => (
-          <PackageCard key={`${category.id}-${pkg.title}`} pkg={pkg} categoryTitle={category.title} />
+          <PackageCard
+            key={`${category.id}-${pkg.title}`}
+            pkg={pkg}
+            categoryTitle={category.title}
+            titleHeading={packageTitleHeading}
+          />
         ))}
       </div>
     </section>
@@ -148,14 +174,16 @@ export default function Packages() {
   return (
     <section id="packages" className="border-t border-neutral-800 bg-neutral-900 py-16 md:py-24">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
-        <header className="mb-14 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-white md:text-5xl">
-            <span className="text-teal-400">Travel Packages</span>
-          </h2>
-          <p className="mx-auto max-w-3xl text-base text-neutral-400 sm:text-lg">
-            Explore spiritual, adventure, coastal, and hidden destination packages with comfortable vehicles, professional drivers, and easy booking.
-          </p>
-        </header>
+        {!omitPageHeading && (
+          <header className="mb-14 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-white md:text-5xl">
+              <span className="text-teal-400">Travel Packages</span>
+            </h2>
+            <p className="mx-auto max-w-3xl text-base text-neutral-400 sm:text-lg">
+              Explore spiritual, adventure, coastal, and hidden destination packages with comfortable vehicles, professional drivers, and easy booking.
+            </p>
+          </header>
+        )}
 
         <div className="mb-6 md:hidden">
           <p className="mb-2 text-center text-sm font-semibold text-neutral-200">Select Category</p>
@@ -182,11 +210,11 @@ export default function Packages() {
         </div>
 
         <div className="space-y-14 md:hidden">
-          {renderCategorySection(selectedCategory)}
+          {renderCategorySection(selectedCategory, omitPageHeading)}
         </div>
 
         <div className="hidden space-y-14 md:block">
-          {packageCategories.map((category) => renderCategorySection(category))}
+          {packageCategories.map((category) => renderCategorySection(category, omitPageHeading))}
         </div>
       </div>
     </section>

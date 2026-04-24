@@ -14,6 +14,8 @@ yarn dev
 pnpm dev
 # or
 bun dev
+
+NEXT_PUBLIC_SITE_URL=https://www.divyadarshantravels.com
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

@@ -4,14 +4,18 @@ const testimonials = [
   { name: "Nani", text: "Great service and fair pricing. I will definitely book Divya Darshan Travels again." }
 ];
 
-export default function Testimonials() {
+type TestimonialsProps = { omitPageHeading?: boolean };
+
+export default function Testimonials({ omitPageHeading = false }: TestimonialsProps = {}) {
   return (
     <section id="testimonials" className="py-20 bg-neutral-900/60 border-y border-neutral-800/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <p className="text-teal-400 font-semibold tracking-wide uppercase text-sm mb-3">Client Testimonials</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">What Our Clients Say</h2>
-        </div>
+        {!omitPageHeading && (
+          <div className="text-center mb-12">
+            <p className="text-teal-400 font-semibold tracking-wide uppercase text-sm mb-3">Client Testimonials</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">What Our Clients Say</h2>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((item) => (

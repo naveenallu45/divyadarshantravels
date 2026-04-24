@@ -1,7 +1,7 @@
- "use client";
+"use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { createElement, useMemo, useState } from "react";
 import { FaCarSide, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { createWhatsAppLink, createCallLink } from "../lib/utils";
 
@@ -54,7 +54,9 @@ const vehicleSections = [
   },
 ];
 
-export default function Cars() {
+type CarsProps = { omitPageHeading?: boolean };
+
+export default function Cars({ omitPageHeading = false }: CarsProps = {}) {
   const [selectedCategory, setSelectedCategory] = useState(vehicleSections[0].title);
   const selectedSection = useMemo(
     () => vehicleSections.find((section) => section.title === selectedCategory) ?? vehicleSections[0],
@@ -67,7 +69,11 @@ export default function Cars() {
       className="bg-gradient-to-br from-neutral-900 to-neutral-900/70 border border-neutral-800 rounded-2xl p-6 hover:shadow-[0_0_30px_rgba(20,184,166,0.14)] transition-all hover:border-teal-500/30"
     >
       <div className="mb-4 flex items-center justify-between border-b border-neutral-800 pb-3">
-        <h3 className="text-2xl font-bold text-white">{section.title}</h3>
+        {createElement(
+          omitPageHeading ? "h2" : "h3",
+          { className: "text-2xl font-bold text-white" },
+          section.title
+        )}
         <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-neutral-800 text-teal-300 border border-neutral-700">
           {section.vehicles.length} Vehicles
         </span>
@@ -86,7 +92,11 @@ export default function Cars() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <h4 className="text-white font-semibold mb-3">{vehicle.name}</h4>
+            {createElement(
+              omitPageHeading ? "h3" : "h4",
+              { className: "text-white font-semibold mb-3" },
+              vehicle.name
+            )}
             <div className="flex gap-2">
               <a
                 href={createWhatsAppLink(`Hello Divya Darshan Travels! I want to book the ${vehicle.name}. Please share price and availability.`)}
@@ -112,19 +122,21 @@ export default function Cars() {
   return (
     <section id="fleet" className="py-16 md:py-24 bg-neutral-950 border-t border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-2 mb-5 rounded-full bg-gradient-to-r from-teal-500/20 to-emerald-500/20 border border-teal-500/30 shadow-xl">
-            <FaCarSide size={18} className="text-teal-300" />
-            <span className="font-semibold text-teal-100 tracking-wide">Available Vehicles</span>
+        {!omitPageHeading && (
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 mb-5 rounded-full bg-gradient-to-r from-teal-500/20 to-emerald-500/20 border border-teal-500/30 shadow-xl">
+              <FaCarSide size={18} className="text-teal-300" />
+              <span className="font-semibold text-teal-100 tracking-wide">Available Vehicles</span>
+            </div>
+
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-3">
+              Pick The Right <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-emerald-400">Vehicle Category</span>
+            </h2>
+            <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+              Multiple seating options available for family trips, group tours, and business travel with professional drivers.
+            </p>
           </div>
-          
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-3">
-            Pick The Right <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-emerald-400">Vehicle Category</span>
-          </h2>
-          <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-            Multiple seating options available for family trips, group tours, and business travel with professional drivers.
-          </p>
-        </div>
+        )}
 
         <div className="mb-5 md:hidden">
           <p className="mb-2 text-center text-sm font-semibold text-neutral-200">Select Category</p>

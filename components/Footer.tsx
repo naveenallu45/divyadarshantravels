@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-16">
           {/* Brand Info */}
           <div className="flex flex-col gap-6">
-            <Link href="#home" className="flex items-center gap-4">
+            <Link href="/" className="flex items-center gap-4">
               <div className="relative w-20 h-20 md:w-16 md:h-16 rounded-full overflow-hidden shadow-lg border-2 border-neutral-800 bg-white p-1 flex-shrink-0">
                 <Image
                   src="/images/divya-darshan-logo.png"
@@ -51,11 +51,12 @@ export default function Footer() {
             <h4 className="text-xl font-bold text-white mb-8 border-b border-neutral-800 pb-4 inline-block">Quick Navigation</h4>
             <ul className="space-y-4">
               {[
-                { name: 'Home', link: '#home' },
-                { name: 'Services', link: '#services' },
-                { name: 'Packages', link: '#packages' },
-                { name: 'Available Vehicles', link: '#fleet' },
-                { name: 'Testimonials', link: '#testimonials' }
+                { name: "Home", link: "/" },
+                { name: "Services", link: "/services" },
+                { name: "Packages", link: "/packages" },
+                { name: "Available Vehicles", link: "/vehicles" },
+                { name: "Testimonials", link: "/testimonials" },
+                { name: "Contact", link: "/contact" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.link} className="text-neutral-400 hover:text-teal-400 transition-colors flex items-center gap-2 group">

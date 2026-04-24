@@ -9,11 +9,11 @@ import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { createWhatsAppLink, createCallLink } from "../lib/utils";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Services", href: "#services" },
-  { name: "Packages", href: "#packages" },
-  { name: "Available Vehicles", href: "#fleet" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/services" },
+  { name: "Packages", href: "/packages" },
+  { name: "Available Vehicles", href: "/vehicles" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -26,7 +26,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-2">
-          <Link href="#home" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <div className="relative w-16 h-16 md:w-12 md:h-12 rounded-full overflow-hidden border border-neutral-700 bg-white p-1">
               <Image
                 src="/images/divya-darshan-logo.png"

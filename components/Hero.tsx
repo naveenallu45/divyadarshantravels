@@ -23,8 +23,13 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-800/80 border border-neutral-700 backdrop-blur-sm text-teal-400 font-medium text-sm mb-6 shadow-xl">
             <FaMapMarkerAlt /> Vijayawada
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-4 sm:mb-6">
-            Divya Darshan <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Travels</span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-4 sm:mb-6">
+            <span className="text-white [text-shadow:0_2px_20px_rgba(0,0,0,0.75),0_1px_3px_rgba(0,0,0,0.9)]">
+              Divya Darshan{" "}
+            </span>
+            <span className="inline-block bg-gradient-to-r from-teal-300 via-teal-400 to-emerald-400 bg-clip-text text-transparent [filter:drop-shadow(0_2px_16px_rgba(0,0,0,0.85))]">
+              Travels
+            </span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-neutral-300 mb-6 sm:mb-8 max-w-2xl font-light">
             We do not just move people; we move hearts. Enjoy punctual, transparent, and reliable travel with a divine experience on every trip.

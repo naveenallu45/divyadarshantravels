@@ -1,3 +1,4 @@
+import { createElement } from "react";
 import { FaCarSide, FaMapMarkedAlt, FaCity, FaPlane, FaRoute, FaStar } from "react-icons/fa";
 
 const leftServices = [
@@ -36,20 +37,27 @@ const rightServices = [
   },
 ];
 
-export default function Services() {
+type ServicesProps = { omitPageHeading?: boolean };
+
+export default function Services({ omitPageHeading = false }: ServicesProps = {}) {
+  const serviceTitleEl = (title: string) =>
+    createElement(omitPageHeading ? "h2" : "h3", { className: "text-xl font-bold text-white" }, title);
+
   return (
     <section id="services" className="py-16 md:py-32 bg-neutral-950 relative border-t border-neutral-900 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.05)_0%,transparent_60%)] pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            <span className="text-teal-400">Services</span>
-          </h2>
-          <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-            We deliver a divine travel experience with punctuality, transparent pricing, and professional drivers for every ride.
-          </p>
-        </div>
+        {!omitPageHeading && (
+          <div className="text-center mb-16 md:mb-24">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              <span className="text-teal-400">Services</span>
+            </h2>
+            <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+              We deliver a divine travel experience with punctuality, transparent pricing, and professional drivers for every ride.
+            </p>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mx-auto max-w-5xl">
           
@@ -63,7 +71,7 @@ export default function Services() {
                 <div className="w-12 h-12 rounded-xl bg-neutral-950 flex items-center justify-center flex-shrink-0 shadow-inner group-hover:scale-110 transition-transform">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white">{service.title}</h3>
+                {serviceTitleEl(service.title)}
               </div>
               <p className="text-neutral-400 text-sm leading-relaxed">{service.desc}</p>
             </div>
@@ -79,7 +87,7 @@ export default function Services() {
                 <div className="w-12 h-12 rounded-xl bg-neutral-950 flex items-center justify-center flex-shrink-0 shadow-inner group-hover:scale-110 transition-transform">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white">{service.title}</h3>
+                {serviceTitleEl(service.title)}
               </div>
               <p className="text-neutral-400 text-sm leading-relaxed">{service.desc}</p>
             </div>
