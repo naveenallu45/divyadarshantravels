@@ -23,20 +23,20 @@ const vehicleSections = [
   {
     title: "7 Seaters",
     vehicles: [
-      { name: "Innova", image: "/cars/innova.webp" },
+      { name: "Innova", image: "/clientcarupdateimages/innova7seater.png" },
       { name: "Innova Crysta", image: "/cars/innova_crysta.webp" },
-      { name: "Innova Hycross", image: "/cars/innova_hycross.webp" },
+      { name: "Innova Hycross", image: "/clientcarupdateimages/innovahycross7seater.png" },
       { name: "Ertiga", image: "/cars/ertiga.webp" },
       { name: "XL6", image: "/cars/xl6.webp" },
-      { name: "Carens", image: "/cars/carens.webp" },
+      { name: "Carens", image: "/clientcarupdateimages/kiacarens7seater.png" },
     ],
   },
   {
     title: "12 Seaters",
     vehicles: [
-      { name: "Tempo Traveller 2+1", image: "/cars/tempo_traveller_2_1.webp" },
-      { name: "Tempo Traveller 1+1", image: "/cars/tempo_traveller_1_1.webp" },
-      { name: "Urbania", image: "/cars/urbania.webp" },
+      { name: "Tempo Traveller 2+1", image: "/clientcarupdateimages/tempo%202%2B1.png" },
+      { name: "Tempo Traveller 1+1", image: "/clientcarupdateimages/tempo1%2B1.png" },
+      { name: "Urbania", image: "/clientcarupdateimages/urbnia12seater.png" },
       { name: "SML 12 Seater", image: "/cars/sml_12_seater.webp" },
     ],
   },
@@ -44,10 +44,10 @@ const vehicleSections = [
     title: "16 To 40 Seaters",
     vehicles: [
       { name: "Tempo Traveller 17 Seater", image: "/cars/tempo_traveller_17_seater.webp" },
-      { name: "Urbania 16 Seater", image: "/cars/urbania_16_seater.webp" },
-      { name: "Mono Bus 22 Seater", image: "/cars/mono_bus_22_seater.webp" },
+      { name: "Urbania 16 Seater", image: "/clientcarupdateimages/urbnia16seater.png" },
+      { name: "Mono Bus 22 Seater", image: "/clientcarupdateimages/monobus.png" },
       { name: "SML 24 To 27 Seater", image: "/cars/sml_24_to_27_seater.webp" },
-      { name: "Bharat Benz 24 To 27 Seater", image: "/cars/bharat_benz_24_to_27_seater.webp" },
+      { name: "Bharat Benz 24 To 27 Seater", image: "/clientcarupdateimages/bhratbenz.png" },
       { name: "Eicher 30 To 32 Seater", image: "/cars/eicher_30_to_32_seater.webp" },
       { name: "40 To 50 Seater Buses", image: "/cars/40_to_50_seater_buses.webp" },
     ],
@@ -82,14 +82,18 @@ export default function Cars({ omitPageHeading = false }: CarsProps = {}) {
       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {section.vehicles.map((vehicle) => (
           <li key={vehicle.name} className="text-neutral-300 bg-neutral-950/60 border border-neutral-800 rounded-xl p-3 hover:border-teal-500/30 transition-colors">
-            <div className="mb-3 h-56 md:h-48 rounded-lg overflow-hidden border border-neutral-700 bg-neutral-900/70">
+            <div
+              className={`mb-3 relative w-full rounded-lg overflow-hidden border border-neutral-700 bg-gradient-to-b from-neutral-800/80 to-neutral-950 ${
+                vehicle.image.startsWith("/clientcarupdateimages/") ? "aspect-[2/3]" : "aspect-[5/3]"
+              }`}
+            >
               <Image
                 src={vehicle.image}
                 alt={vehicle.name}
-                width={800}
-                height={500}
+                fill
                 unoptimized
-                className="h-full w-full object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 560px"
+                className="object-cover object-center"
               />
             </div>
             {createElement(
